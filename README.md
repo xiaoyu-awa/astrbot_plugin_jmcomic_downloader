@@ -1,14 +1,32 @@
-# astrbot-plugin-helloworld
+astrbot-plugin-jmcomic_downloader
 
-AstrBot 插件模板 / A template plugin for AstrBot plugin feature
+---
 
-> [!NOTE]
-> This repo is just a template of [AstrBot](https://github.com/AstrBotDevs/AstrBot) Plugin.
-> 
-> [AstrBot](https://github.com/AstrBotDevs/AstrBot) is an agentic assistant for both personal and group conversations. It can be deployed across dozens of mainstream instant messaging platforms, including QQ, Telegram, Feishu, DingTalk, Slack, LINE, Discord, Matrix, etc. In addition, it provides a reliable and extensible conversational AI infrastructure for individuals, developers, and teams. Whether you need a personal AI companion, an intelligent customer support agent, an automation assistant, or an enterprise knowledge base, AstrBot enables you to quickly build AI applications directly within your existing messaging workflows.
+# 禁漫本子下载器
 
-# Supports
+## 指令
 
-- [AstrBot Repo](https://github.com/AstrBotDevs/AstrBot)
-- [AstrBot Plugin Development Docs (Chinese)](https://docs.astrbot.app/dev/star/plugin-new.html)
-- [AstrBot Plugin Development Docs (English)](https://docs.astrbot.app/en/dev/star/plugin-new.html)
+| 指令 | 说明 |
+|------|------|
+| `/jmv [id]` | 查询对应本子详细信息 |
+| `/jm [id]` | 下载对应本子 |
+
+## 依赖
+
+- `jmcomic`
+- `img2pdf`
+
+## 配置
+
+在插件目录下有jmcomic.yml文件
+配置项可在[jmcomic](https://jmcomic.readthedocs.io/zh-cn/latest/option_file_syntax/)找到
+
+## TODO
+
+>1.配置jmcomic库中的可选项
+>2.自动清理下载的pdf
+>3.优化逻辑 防呆机制等
+
+## 引用
+
+- [jmcomic](https://github.com/hect0x7/JMComic-Crawler-Python)（其实核心全靠这个库了x）

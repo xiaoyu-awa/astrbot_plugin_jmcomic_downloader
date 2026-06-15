@@ -1,0 +1,21 @@
+download:
+  cache: true # 如果要下载的文件在磁盘上已存在，不用再下一遍了吧？默认为true
+  image:
+    decode: true # JM的原图是混淆过的，要不要还原？默认为true
+    #suffix: .jpg # 把图片都转为.jpg格式，默认为null，表示不转换。
+  threading:
+    # image: 同时下载的图片数，默认是30张图
+    # 数值大，下得快，配置要求高，对禁漫压力大
+    # 数值小，下得慢，配置要求低，对禁漫压力小
+    # PS: 禁漫网页一次最多请求50张图
+    image: 30
+    # photo: 同时下载的章节数，不配置默认是cpu的线程数。例如8核16线程的cpu → 16.
+    photo: 4
+    
+plugins:
+  after_init:
+    - plugin: advanced_retry      # 声明并开启高级重试插件
+      kwargs:
+        retry_config:
+          retry_rounds: 5             # 整个域名数组支持轮询尝试的圈数
+          retry_domain_max_times: 10   # 单个域名允许的最大失败次数
